@@ -17,3 +17,8 @@
 Please acquire all the data from ChebNet II and put the data in the subfolder './data'. 
 The ogb datasets (ogbn-arxiv and ogbn-papers100M) and non-homophilous datasets (from [LINKX](https://arxiv.org/abs/2110.14446) ) can be downloaded automatically.
 
+## Folders
+Please create a folder named 'pretrained' before running.
+
+## Citation
+Please cite our work if interested
