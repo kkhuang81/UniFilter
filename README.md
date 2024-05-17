@@ -1,6 +1,6 @@
 ## How Universal Polynomial Bases Enhance Spectral Graph Neural Networks: Heterophily, Over-smoothing, and Over-squashing
 
-{\bf UniFilter} is a polynomial graph filter by using a novel universal polynomial basis and is accepted by ICML 2024. This repository contains the source codes of UniFilter, data process, and split generation codes. For detailed information about NIGCN, please refer to our paper. If any issues are observed, please contact Keke Huang, thanks!
+**_UniFilter_** is a polynomial graph filter by using a novel universal polynomial basis and is accepted by ICML 2024. This repository contains the source codes of UniFilter, data process, and split generation codes. For detailed information about NIGCN, please refer to our paper. If any issues are observed, please contact Keke Huang, thanks!
 
 ## Environment Settings    
 
