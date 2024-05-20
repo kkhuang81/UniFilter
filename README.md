@@ -21,4 +21,4 @@ The ogb datasets (ogbn-arxiv and ogbn-papers100M) and non-homophilous datasets (
 Please create a folder named 'pretrained' before running.
 
 ## Citation
-Please cite our work if interested
+Please cite our paper if it is relevant to your work, thanks! 
