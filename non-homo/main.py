@@ -34,7 +34,7 @@ def parse_args():
     parser.add_argument('--hid', type=int, default=128)
     parser.add_argument('--nlayers', type=int, default=3, help='number of layers for MLP')
 
-    parser.add_argument('--model', type=str, choices=['gcn', 'gfk'], default='gfk')
+    parser.add_argument('--model', type=str, choices=['mlp', 'gfk'], default='gfk')
     parser.add_argument('--epochs', type=int, default=1000)
     parser.add_argument('--runs', type=int, default=5, help='number of distinct runs')
     parser.add_argument('--dropout', type=float, default=0.5)
@@ -144,8 +144,8 @@ if __name__ == '__main__':
         features, dim = load_dataset(LP, feat, args.K, args.tau, homoratio, args.plain)
         train_idx=train_idx.to(device)
         # Model and optimizer
-        if args.model =='gcn':
-            model = GCN(nfeat=features.shape[1],
+        if args.model =='mlp':
+            model = MLP(nfeat=features.shape[1],
                 nlayers=args.nlayers,
                 nhidden=args.hid,
                 nclass=label.max().item() + 1,
