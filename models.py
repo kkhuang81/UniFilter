@@ -29,9 +29,9 @@ class Dense(nn.Module):
             output = output + input
         return output
 
-class GCN(nn.Module):
+class MLP(nn.Module):
     def __init__(self, nfeat, nlayers,nhidden, nclass, dropout, bias):
-        super(GCN, self).__init__()
+        super(MLP, self).__init__()
         self.fcs = nn.ModuleList()
         self.fcs.append(Dense(nfeat, nhidden, bias))
         for _ in range(nlayers-2):
@@ -83,7 +83,7 @@ class GFK(nn.Module):
         self.nfeat = nfeat
         self.level = level+1
         self.comb = Combination(nfeat, self.level, dropoutC, sole)
-        self.mlp = GCN(nfeat, nlayers,nhidden, nclass, dropoutM, bias)
+        self.mlp = MLP(nfeat, nlayers,nhidden, nclass, dropoutM, bias)
 
 
     def forward(self, x):
