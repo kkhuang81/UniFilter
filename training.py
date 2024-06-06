@@ -25,7 +25,7 @@ parser.add_argument('--lr', type=float, default=0.01, help='Initial learning rat
 parser.add_argument('--weight_decay', type=float, default=5e-4, help='Weight decay (L2 loss on parameters).')
 parser.add_argument('--dropout', type=float, default=0.5, help='Dropout rate (1 - keep probability).')
 
-parser.add_argument('--model', type=str, choices=['gcn', 'gfk'], default='gfk')
+parser.add_argument('--model', type=str, choices=['mlp', 'gfk'], default='gfk')
 parser.add_argument('--lr1', type=float, default=0.01, help='Initial learning rate of MLP.')
 parser.add_argument('--lr2', type=float, default=0.01, help='Initial learning rate of Combination.')
 parser.add_argument('--wd1', type=float, default=5e-4, help='Weight decay of MLP.')
@@ -137,8 +137,8 @@ for idx in range(run):
     checkpt_file = 'pretrained/'+uuid.uuid4().hex+'.pt'
 
     # Model and optimizer
-    if args.model =='gcn':
-        model = GCN(nfeat=features.shape[1],
+    if args.model =='mlp':
+        model = MLP(nfeat=features.shape[1],
             nlayers=args.nlayers,
             nhidden=args.hid,
             nclass=labels.max().item() + 1,
